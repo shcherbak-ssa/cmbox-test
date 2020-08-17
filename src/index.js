@@ -1,6 +1,7 @@
 'use strict';
 
 /** imports */
+import './controllers/parallax';
 
 // assets
 import './styles/main.scss';

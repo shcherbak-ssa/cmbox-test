@@ -1,0 +1,59 @@
+
+.input {
+  background: #fff;
+  padding: 6px 0 6px 16px;
+  margin-bottom: 32px;
+  -x-size: 100% 56px;
+
+  &-field {
+    display: block;
+    padding-top: 20px;
+    position: relative;
+    -x-color: $black transparent;
+    -x-size: 100%;
+  }
+  &-placeholder {
+    color: $gray;
+    left: 16px;
+    transition: .4s;
+
+    .paragraph2 {
+      transition: .2s;
+    }
+  }
+  &-error {
+    color: $primary-red;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  &-placeholder, &-error {
+    position: absolute;
+  }
+
+  &.is-filled {
+    .input-placeholder {
+      top: 6px;
+      transform: none;
+
+      .paragraph2 {
+        font-size: 13px;
+      }
+    }
+    .input-field {
+      z-index: 9;
+    }
+  }
+  &.is-error {
+    background: $primary-red-girl;
+    box-shadow: $error-shadow;
+    margin-bottom: 42px;
+
+    .input-error {
+      bottom: -28px;
+      opacity: 1;
+    }
+  }
+}

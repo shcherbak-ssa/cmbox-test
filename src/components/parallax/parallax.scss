@@ -1,0 +1,17 @@
+
+.parallax {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &-title {
+    color: $primary;
+    font: 32px/40px 'roboto-bold';
+    margin-bottom: 24px;
+  }
+  &-text {
+    color: $black;
+    width: 387px;
+    -x-font-size: 20px/28px;
+  }
+}

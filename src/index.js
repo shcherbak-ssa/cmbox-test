@@ -4,3 +4,4 @@
 
 // assets
 import './styles/main.scss';
+import './assets/fonts';

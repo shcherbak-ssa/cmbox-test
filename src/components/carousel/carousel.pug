@@ -1,4 +1,19 @@
 
+include ../slide/slide.pug
+include ../slides/slides.pug
+
+-
+  let slides = [
+    {
+      title: 'The first slide title',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, rerum!',
+      url: 'slide1.jpg',
+    }
+  ]
+
 mixin carousel()
   +block()(class="carousel")
+    each slide in slides
+      +slide(slide)
+    +slides()
     

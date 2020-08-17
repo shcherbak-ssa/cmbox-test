@@ -101,7 +101,8 @@ const webpackConfig = (env = {}) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         //favicon: joinPaths(SRC_DIRNAME, 'assets', 'favicon.ico'),
-        template: joinPaths(SRC_DIRNAME, 'index.pug')
+        template: joinPaths(SRC_DIRNAME, 'index.pug'),
+        scriptLoading: 'defer',
       }),
       new MiniCssExtractPlugin({
         filename: `main.css`

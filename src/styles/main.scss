@@ -4,12 +4,16 @@
 /** reset */
 @import './reset.scss';
 
+/** assets */
+@import './assets.scss';
+
 /** main styles */
 body {
   position: relative;
 }
 
 /** classes */
+@import './classes.scss';
 
 /** components */
-@import '../components//components.scss';
+@import '../components/components.scss';

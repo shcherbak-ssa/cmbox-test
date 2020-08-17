@@ -1,0 +1,23 @@
+
+/** box-sizing */
+[data-class~="bs"] {
+  box-sizing: border-box;
+}
+
+/** flexbox */
+[data-class~="fsb"] { // flex-space-between
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/** sizes */
+[data-class~="w100"] {
+  width: 100%;
+}
+
+/** padding */
+[data-class~="mp"] { // main-padding
+  $padding: $design-padding/$design-width * 100%;
+  padding: 0 $padding;
+}

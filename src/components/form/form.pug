@@ -1,0 +1,28 @@
+
+include ../input/input.pug
+
+-
+  const inputs = [
+    {
+      type: 'name',
+      placeholder: 'Your name'
+    },
+    {
+      type: 'email',
+      placeholder: 'E-mail'
+    },
+    {
+      type: 'phone',
+      placeholder: 'Phone'
+    },
+  ];
+
+mixin form()
+  +block()(class="form")
+    +bg-shadow()
+    .form-container(data-class="br8 bs pc shadow")
+      .form-title Form
+      each input in inputs
+        +input(input)
+      +button('Submit')
+      

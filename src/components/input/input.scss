@@ -13,7 +13,7 @@
     -x-size: 100%;
   }
   &-placeholder {
-    color: $gray;
+    color: rgba(17, 17, 17, 0.48);;
     left: 16px;
     transition: .4s;
 
@@ -48,7 +48,6 @@
   }
   &.is-error {
     background: $primary-red-girl;
-    box-shadow: $error-shadow;
     margin-bottom: 42px;
 
     .input-error {

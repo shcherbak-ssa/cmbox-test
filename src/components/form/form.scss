@@ -1,4 +1,19 @@
 
 .form {
-  
+  background: url('/images/form-bg.jpg') center no-repeat;
+  background-size: cover;
+
+  &-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px;
+    width: 480px;
+  }
+  &-title {
+    color: $black;
+    font: 32px/40px 'roboto-bold';
+    margin-bottom: 36px;
+  }
 }
+
+@import '../input/input.scss';

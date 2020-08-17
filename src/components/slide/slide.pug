@@ -1,0 +1,8 @@
+
+mixin slide(slide)
+  .slide(data-class="full", style={background: url(`/images/${slide.url}`)})
+    .slide-shadow(data-class="full")
+    .slide-info
+      .slide-title= slide.title
+      .slide-text= slide.text
+      +button('Learn more')(class="slide-button")

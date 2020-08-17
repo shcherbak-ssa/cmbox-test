@@ -1,0 +1,32 @@
+
+$slide-top: 300/$design-height * 100%;
+$slide-left: $padding;
+
+.slide {
+  background: {
+    position: center;
+    size: cover;
+  };
+  color: #fff;
+  -x-position: absolute 0 x x 0;
+
+  &-shadow {
+    background: rgba($color: $black, $alpha: 0.48);
+    position: absolute;
+  }
+  &-info {
+    width: 360px;
+    -x-position: absolute $slide-top x x $slide-left;
+  }
+  &-title {
+    font: 48px 'roboto-black';
+    margin-bottom: 20px;
+  }
+  &-text {
+    margin-bottom: 32px;
+    -x-font-size: 18px/21px;
+  }
+  &-button {
+    width: 200px;
+  }
+}

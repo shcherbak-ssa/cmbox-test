@@ -10,10 +10,6 @@ $slide-left: $padding;
   color: #fff;
   -x-position: absolute 0 x x 0;
 
-  &-shadow {
-    background: rgba($color: $black, $alpha: 0.48);
-    position: absolute;
-  }
   &-info {
     width: 400px;
     -x-position: absolute $slide-top x x $slide-left;

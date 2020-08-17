@@ -1,9 +1,14 @@
 
 .header {
-  -x-position: absolute 38px x x 0;
+  z-index: 9;
+  -x-position: absolute 36px x x 0;
 
   &-logo {
     color: #fff;
     font: 36px/42px 'roboto-bold';
+  }
+  &-menu {
+    background: url('/images/burger.png') no-repeat;
+    -x-size: 36px;
   }
 }

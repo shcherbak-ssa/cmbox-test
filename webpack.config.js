@@ -26,7 +26,7 @@ const webpackConfig = (env = {}) => {
     entry: joinPaths(SRC_DIRNAME, 'index.js'),
     output: {
       path: resolvePath(__dirname, 'public'),
-      filename: `js/index.js`,
+      filename: `index.js`,
     },
     module: {
       rules: [
@@ -92,6 +92,11 @@ const webpackConfig = (env = {}) => {
         },
       ]
     },
+    resolve: {
+      alias: {
+        '@style-assets': joinPaths(SRC_DIRNAME, 'styles', 'assets.scss')
+      }
+    },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
@@ -99,7 +104,7 @@ const webpackConfig = (env = {}) => {
         template: joinPaths(SRC_DIRNAME, 'index.pug')
       }),
       new MiniCssExtractPlugin({
-        filename: `css/main.css`
+        filename: `main.css`
       })
     ]
   }

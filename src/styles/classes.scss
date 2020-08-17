@@ -17,7 +17,8 @@
 }
 
 /** padding */
+$padding: $design-padding/$design-width * 100%;
+
 [data-class~="mp"] { // main-padding
-  $padding: $design-padding/$design-width * 100%;
   padding: 0 $padding;
 }

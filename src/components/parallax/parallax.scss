@@ -3,7 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+
   &-title {
     color: $primary;
     font: 32px/40px 'roboto-bold';
@@ -13,5 +16,10 @@
     color: $black;
     width: 387px;
     -x-font-size: 20px/28px;
+  }
+  &-item {
+    background: rgba(79, 184, 235, 0.2);
+    border-radius: 50%;
+    position: absolute;
   }
 }

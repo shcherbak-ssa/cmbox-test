@@ -1,5 +1,57 @@
 
+-
+  const designWidth = 1440;
+  const designHeight = 1024;
+  const parallaxItems = [
+    {
+      size: '152',
+      top: '-65px',
+      left: getLeftValue(520)
+    },
+    {
+      size: '58',
+      top: getTopValue(260),
+      left: getLeftValue(790)
+    },
+    {
+      size: '37',
+      top: getTopValue(135),
+      left: getLeftValue(1330)
+    },
+    {
+      size: '57',
+      top: getTopValue(590),
+      left: getLeftValue(950)
+    },
+    {
+      size: '37',
+      top: getTopValue(800),
+      left: getLeftValue(625)
+    },
+    {
+      size: '76',
+      top: getTopValue(560),
+      left: getLeftValue(105)
+    },
+  ];
+
+  function getTopValue(top) {
+    return transformValueToPercent(top/designHeight);
+  }
+  function getLeftValue(left) {
+    return transformValueToPercent(left/designWidth);
+  }
+  function transformValueToPercent(value) {
+    return value * 100 + '%'
+  }
+
+mixin parallax-item(item)
+  - const size = `${item.size}px`;
+  .parallax-item(style={width: size, height: size, top: item.top, left: item.left})
+
 mixin parallax()
   +block()(class="parallax", id="parallax")
+    each item in parallaxItems
+      +parallax-item(item)
     .parallax-title Parallax section
     .parallax-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quisquam!

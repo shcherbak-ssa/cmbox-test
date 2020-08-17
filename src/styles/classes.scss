@@ -1,4 +1,12 @@
 
+/** border-radius */
+[data-class~="br4"] {
+  border-radius: 4px;
+}
+[data-class~="br8"] {
+  border-radius: 8px;
+}
+
 /** box-sizing */
 [data-class~="bs"] {
   box-sizing: border-box;
@@ -7,6 +15,11 @@
 /** flexbox */
 [data-class~="flex"] {
   display: flex;
+}
+[data-class~="fc"] { // flex-center
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 [data-class~="fsb"] { // flex-space-between
   display: flex;
@@ -25,4 +38,17 @@
 /** padding */
 [data-class~="mp"] { // main-padding
   padding: 0 $padding;
+}
+
+/** help */
+[data-class~="click"] {
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    -x-size: 100%;
+  }
 }

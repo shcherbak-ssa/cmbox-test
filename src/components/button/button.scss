@@ -1,0 +1,14 @@
+
+.button {
+  height: 44px;
+  transition: .2s;
+  -x-color: #fff $primary;
+  -x-font-size: 16px/24px;
+
+  &:hover {
+    background: $primary-hover;
+  }
+  &:active {
+    background: $primary-active;
+  }
+}

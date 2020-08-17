@@ -1,18 +1,19 @@
 
 $slide-buttons-right: $padding;
-$slide-buttons-bottom: 174/$design-height * 100%;
+$slide-buttons-bottom: 170/$design-height * 100%;
 
 .slide-buttons {
-  -x-position: x $slide-buttons-right $slide-buttons-bottom x;
-}
-.slide-button {
-  background: url('/images/arrow.png') no-repeat;
-  -x-size: 64px;
+  -x-position: absolute x $slide-buttons-right $slide-buttons-bottom x;
 
-  &.prev {
-    margin-right: 20px;
-  }
-  &.next {
-    transform: rotate(180deg);
+  &-item {
+    background: url('/images/arrow.png') no-repeat;
+    -x-size: 64px;
+  
+    &.prev {
+      margin-right: 20px;
+    }
+    &.next {
+      transform: rotate(180deg);
+    }
   }
 }

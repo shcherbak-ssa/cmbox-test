@@ -1,6 +1,7 @@
 
 include ../slide/slide.pug
 include ../slides/slides.pug
+include ../slide-buttons/slide-buttons.pug
 
 -
   let slides = [
@@ -16,4 +17,5 @@ mixin carousel()
     each slide in slides
       +slide(slide)
     +slides()
+    +slide-buttons()
     

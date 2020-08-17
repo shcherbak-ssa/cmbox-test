@@ -1,0 +1,27 @@
+
+$slide-left: $padding;
+$slide-bottom: 194/$design-height * 100%;
+
+.slides {
+  -x-position: absolute x x $slide-bottom $slide-left;
+
+  &-item {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .2s;
+    -x-size: 24px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+    &:hover, &.is-active {
+      background: $primary;
+      border-color: $primary;
+    }
+    &.is-active {
+      width: 43px;
+    }
+  }
+}

@@ -1,4 +1,9 @@
 
 /** variables */
 $design-width: 1440;
+$design-height: 1024;
 $design-padding: 150;
+$padding: $design-padding/$design-width * 100%;
+
+// colors
+$primary: #6E41E2;

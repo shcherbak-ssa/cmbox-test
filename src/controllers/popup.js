@@ -2,6 +2,10 @@
 
 /** imports */
 import $ from '../tools/get-by-id';
+import {
+  setBodyOverflowToHidden,
+  setBodyOverflowToEmpty
+} from '../tools/body-overflow';
 
 /** Popup */
 class Popup {
@@ -18,15 +22,15 @@ class Popup {
   /** public methods */
   open() {
     this._popup.classList.add('is-open');
-    this._setBodyOverflow('hidden');
     this._setEvents();
+    setBodyOverflowToHidden();
   }
 
   /** private methods */
   _closeHandler() {
     this._popup.classList.remove('is-open');
-    this._setBodyOverflow('');
     this._removeEvents();
+    setBodyOverflowToEmpty();
   }
   
   _setEvents() {
@@ -46,9 +50,6 @@ class Popup {
   _deleteCloseElement() {
     this._closeButton = null;
     this._button = null;
-  }
-  _setBodyOverflow(value) {
-    document.body.style.overflow = value;
   }
 }
 

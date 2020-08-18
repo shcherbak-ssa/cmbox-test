@@ -5,6 +5,7 @@ import $ from '../tools/get-by-id';
 
 /** constants */
 const IS_ACTIVE_CLASS = 'is-active';
+const TIMER_DELAY = 4000;
 
 const carousel = $('carousel');
 const slides = carousel.querySelectorAll('.slide');
@@ -14,13 +15,37 @@ const slideNextButton = $('slide-next');
 
 /** data */
 let activeSlideId = 1;
+let timerId = null;
 
 /** init */
 updateCarousel();
 setSlidesItemsEvents();
 setSlideButtonEvents();
+setTimer();
 
-setInterval(slideNextButtonClickHandler, 3000);
+/** change slide */
+function changeSlide(slideId) {
+  updateActiveSlideId(slideId);
+  updateCarousel();
+  updateTimer();
+}
+function updateActiveSlideId(slideId) {
+  activeSlideId = slideId;
+}
+function updateCarousel() {
+  slides.forEach(updateSlide);
+  slidesItems.forEach(updateSlide);
+}
+function updateSlide(item) {
+  const itemClassList = item.classList;
+  const slideId = item.dataset.slideId;
+  updateActiveClass(slideId, itemClassList)
+}
+function updateActiveClass(slideId, classList) {
+  +slideId === activeSlideId
+    ? classList.add(IS_ACTIVE_CLASS)
+    : classList.remove(IS_ACTIVE_CLASS);
+}
 
 /** events */
 function setSlidesItemsEvents() {
@@ -51,26 +76,12 @@ function slideNextButtonClickHandler() {
   const slideId = activeSlideId === 4 ? 1 : activeSlideId + 1;
   changeSlide(slideId)
 }
-function changeSlide(slideId) {
-  updateActiveSlideId(slideId);
-  updateCarousel();
-}
 
-/** update */
-function updateActiveSlideId(slideId) {
-  activeSlideId = slideId;
+/** timer */
+function setTimer() {
+  timerId = setInterval(slideNextButtonClickHandler, TIMER_DELAY);
 }
-function updateCarousel() {
-  slides.forEach(updateSlide);
-  slidesItems.forEach(updateSlide);
-}
-function updateSlide(item) {
-  const itemClassList = item.classList;
-  const slideId = item.dataset.slideId;
-  updateActiveClass(slideId, itemClassList)
-}
-function updateActiveClass(slideId, classList) {
-  +slideId === activeSlideId
-    ? classList.add(IS_ACTIVE_CLASS)
-    : classList.remove(IS_ACTIVE_CLASS);
+function updateTimer() {
+  clearInterval(timerId);
+  setTimer();
 }

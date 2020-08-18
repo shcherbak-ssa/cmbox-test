@@ -6,21 +6,34 @@ import Input from './input';
 import Popup from './popup';
 
 /** constants */
+const ERROR_MESSAGE = 'The field must be filled';
+
 const formContainer = $('form-container');
-const inputs = formContainer.querySelectorAll('.input');
+const inputs = [].map.call(formContainer.querySelectorAll('.input'), Input.create);
 const button = formContainer.querySelector('.button');
 
 /** init */
 inputs.forEach(inputInit)
 button.addEventListener('click', buttonClickHanlder);
 
-function inputInit(inputElement) {
-  const input = Input.create(inputElement);
+/** functions */
+function inputInit(input) {
   input.setEvents();
 }
 function buttonClickHanlder() {
-  console.log('click')
-  showPopup();
+  try {
+    validateInputs();
+    showPopup();
+  } catch (error) {
+    if (error.name !== 'FormError') return console.log(error.message);
+    error.input.setError(error.message);
+  }
+}
+function validateInputs() {
+  inputs.forEach((input) => {
+    const value = input.getValue();
+    if (!value) throw new Error(ERROR_MESSAGE)
+  })
 }
 function showPopup() {
   const popup = Popup.create();

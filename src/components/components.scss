@@ -1,10 +1,14 @@
 
-@import './header/header.scss';
+/** loader */
+@import './loader/loader.scss';
+
+/** base */
 @import './block/block.scss';
 @import './button/button.scss';
 @import './bg-shadow/bg-shadow.scss';
 
 /** blocks */
+@import './header/header.scss';
 @import './carousel/carousel.scss';
 @import './parallax/parallax.scss';
 @import './form/form.scss';

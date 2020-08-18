@@ -2,6 +2,7 @@
 
 /** imports */
 import './controllers/parallax';
+import './controllers/form';
 
 // assets
 import './styles/main.scss';

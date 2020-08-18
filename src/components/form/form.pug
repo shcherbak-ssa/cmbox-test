@@ -20,7 +20,7 @@ include ../input/input.pug
 mixin form()
   +block()(class="form")
     +bg-shadow()
-    .form-container(data-class="br8 bs pc shadow")
+    #form.form-container(data-class="br8 bs pc shadow")
       .form-title Form
       each input in inputs
         +input(input)

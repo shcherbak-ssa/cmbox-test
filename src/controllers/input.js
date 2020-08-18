@@ -17,9 +17,9 @@ class Input {
 
   /** public methods */
   setEvents() {
-    this._input.addEventListener('click', this._clickHandler);
-    this._inputField.addEventListener('input', this._inputHandler);
-    this._inputField.addEventListener('blur', this._blurHandler);
+    this._input.addEventListener('click', this._clickHandler.bind(this));
+    this._inputField.addEventListener('input', this._inputHandler.bind(this));
+    this._inputField.addEventListener('blur', this._blurHandler.bind(this));
   }
   getValue() {
     return this._inputField.value;

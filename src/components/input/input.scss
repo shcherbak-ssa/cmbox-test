@@ -19,11 +19,7 @@
   &-placeholder {
     color: rgba(17, 17, 17, 0.48);;
     left: 16px;
-    transition: .4s;
-
-    .paragraph2 {
-      transition: .2s;
-    }
+    transition: .2s;
   }
   &-error {
     color: $primary-red;
@@ -39,12 +35,9 @@
 
   &.is-filled {
     .input-placeholder {
+      font-size: 13px;
       top: 6px;
       transform: none;
-
-      .paragraph2 {
-        font-size: 13px;
-      }
     }
     .input-field {
       z-index: 9;

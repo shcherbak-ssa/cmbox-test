@@ -39,16 +39,16 @@ function setParallaxItemsCenterPosition() {
   return [].map.call(parallaxItems, getParallaxItemCenterPosition);
 }
 function getParallaxItemCenterPosition(item) {
-  const {top, left, width, height} = item.getBoundingClientRect();
-  const itemTopCenterPosition = getTopCenterPosition(top, height);
-  const itemLeftCenterPosition = getLeftCenterPosition(left, width);
+  const {top, left, width: size} = item.getBoundingClientRect();
+  const itemTopCenterPosition = getTopCenterPosition(top, size);
+  const itemLeftCenterPosition = getLeftCenterPosition(left, size);
   return {itemTopCenterPosition, itemLeftCenterPosition}
 }
-function getTopCenterPosition(top, height) {
-  return top + getHalfSize(height);
+function getTopCenterPosition(top, size) {
+  return top + getHalfSize(size);
 }
-function getLeftCenterPosition(left, width) {
-  return left + getHalfSize(width);
+function getLeftCenterPosition(left, size) {
+  return left + getHalfSize(size);
 }
 function getHalfSize(size) {
   return size/2;

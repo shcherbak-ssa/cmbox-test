@@ -1,6 +1,10 @@
 
 mixin slide(slide)
-  .slide(data-class="full", style={'background-image': `url('/images/${slide.url}')`})
+  .slide(
+    data-class="full",
+    style={'background-image': `url('/images/${slide.url}')`},
+    data-slide-id=slide.id
+  )
     +bg-shadow()
     .slide-info
       .slide-title= slide.title

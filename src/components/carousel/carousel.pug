@@ -6,29 +6,33 @@ include ../slide-buttons/slide-buttons.pug
 -
   let slides = [
     {
+      id: 1,
       title: 'The first slide title',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, rerum!',
       url: 'slide1.jpg',
     },
     {
+      id: 2,
       title: 'The second slide title',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, suscipit?',
       url: 'slide2.jpg',
     },
     {
+      id: 3,
       title: 'The third slide title',
       text: 'Fugiat, quasi alias quia architecto asperiores officia?',
       url: 'slide3.jpg',
     },
     {
+      id: 4,
       title: 'The forth slide title',
       text: 'Itaque temporibus et vel ratione fugit tempora.',
       url: 'slide4.jpg',
     },
-  ]
+  ];
 
 mixin carousel()
-  +block()(class="carousel")
+  +block()(class="carousel", id="carousel")
     each slide in slides
       +slide(slide)
     +slides()

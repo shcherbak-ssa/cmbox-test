@@ -1,6 +1,7 @@
 'use strict';
 
 /** imports */
+import './controllers/scroll';
 import './controllers/carousel';
 import './controllers/parallax';
 import './controllers/form';

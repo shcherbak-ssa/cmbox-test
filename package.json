@@ -35,5 +35,8 @@
     "sass-loader": "^9.0.3",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "scroll-js": "^3.3.0"
   }
 }

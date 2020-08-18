@@ -6,9 +6,9 @@ import Input from './input';
 import Popup from './popup';
 
 /** constants */
-const form = $('form');
-const inputs = form.querySelectorAll('.input');
-const button = form.querySelector('.button');
+const formContainer = $('form-container');
+const inputs = formContainer.querySelectorAll('.input');
+const button = formContainer.querySelector('.button');
 
 /** init */
 inputs.forEach(inputInit)

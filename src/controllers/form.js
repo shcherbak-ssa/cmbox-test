@@ -3,6 +3,7 @@
 /** imports */
 import $ from '../tools/get-by-id';
 import Input from './input';
+import Popup from './popup';
 
 /** constants */
 const form = $('form');
@@ -19,4 +20,9 @@ function inputInit(inputElement) {
 }
 function buttonClickHanlder() {
   console.log('click')
+  showPopup();
+}
+function showPopup() {
+  const popup = Popup.create();
+  popup.open();
 }

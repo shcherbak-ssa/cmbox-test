@@ -27,6 +27,8 @@ class Input {
   setError(error) {
     this._setError(error);
     this._setClassname('is-error');
+    this._setClassname('is-filled');
+    this._addFocus();
     this._inputField.addEventListener('input', this._inputHandlerBind);
   }
 

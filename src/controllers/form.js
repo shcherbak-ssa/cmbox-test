@@ -4,6 +4,7 @@
 import $ from '../tools/get-by-id';
 import Input from './input';
 import Popup from './popup';
+import FormError from './form-error';
 
 /** constants */
 const ERROR_MESSAGE = 'The field must be filled';
@@ -32,7 +33,7 @@ function buttonClickHanlder() {
 function validateInputs() {
   inputs.forEach((input) => {
     const value = input.getValue();
-    if (!value) throw new Error(ERROR_MESSAGE)
+    if (!value) throw new FormError(ERROR_MESSAGE, input)
   })
 }
 function showPopup() {

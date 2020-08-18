@@ -1,6 +1,7 @@
 
 mixin input(input)
-  .input(data-class="bs click", data-input-type=input.type)
-    input.input-field(type="text")
-    .input-placeholder= input.placeholder
+  .input(data-class="bs br4 shadow click", data-input-type=input.type)
+    input.input-field(type="text", data-class="bs")
+    .input-placeholder(data-class="ptc")= input.placeholder
     .input-error
+    

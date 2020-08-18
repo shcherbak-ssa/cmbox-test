@@ -1,15 +1,19 @@
 
 .input {
   background: #fff;
+  font-size: 16px;
   padding: 6px 0 6px 16px;
   margin-bottom: 32px;
+  transition: .2s;
   -x-size: 100% 56px;
 
   &-field {
     display: block;
-    padding-top: 20px;
-    position: relative;
+    padding: 20px 0 0 16px;
+    font-size: inherit;
+    font-family: inherit;
     -x-color: $black transparent;
+    -x-position: 0 x x 0;
     -x-size: 100%;
   }
   &-placeholder {
@@ -29,7 +33,7 @@
     transition: .2s;
   }
 
-  &-placeholder, &-error {
+  &-field, &-placeholder, &-error {
     position: absolute;
   }
 

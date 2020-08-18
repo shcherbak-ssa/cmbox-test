@@ -18,7 +18,7 @@ class Input {
   /** public methods */
   setEvents() {
     this._input.addEventListener('click', this._clickHandler.bind(this));
-    this._inputField.addEventListener('input', this._inputHandler.bind(this));
+    this._inputField.addEventListener('keyup', this._keyupHandler.bind(this));
     this._inputField.addEventListener('blur', this._blurHandler.bind(this));
   }
   getValue() {
@@ -34,8 +34,8 @@ class Input {
     if (!this._hasValue()) this._setClassname('is-filled');
     this._addFocus();
   }
-  _inputHandler({target: {value}}) {
-
+  _keyupHandler({target: {value}, key, code}) {
+    console.log(value, key, code);
   }
   _blurHandler() {
     if (this._hasValue()) return;

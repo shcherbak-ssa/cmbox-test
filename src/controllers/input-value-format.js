@@ -5,7 +5,7 @@ const phoneTemplate = '+375 (**) ***-**-**';
 
 /** inputValueFormat */
 const inputValueFormat = {
-  phone: (value) => {
+  phone: (value, key) => {
     return phoneTemplate
   }
 };

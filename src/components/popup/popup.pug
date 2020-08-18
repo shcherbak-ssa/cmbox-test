@@ -1,0 +1,11 @@
+
+mixin popup()
+  #popup.popup(data-class="fc full")
+    +bg-shadow()
+    .popup-container(data-class="fc bs br8 shadow")
+      .popup-close(data-class="fc btn click")
+        .popup-icon
+      .popup-image
+      .popup-title Thank you
+      .popup-text Your data has been sent
+      +button('Got it')(class="popup-button")

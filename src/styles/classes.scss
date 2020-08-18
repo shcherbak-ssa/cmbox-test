@@ -60,6 +60,17 @@
 }
 
 /** help */
+[data-class~="btn"] {
+  transition: .2s;
+  -x-color: #fff $primary;
+
+  &:hover {
+    background: $primary-hover;
+  }
+  &:active {
+    background: $primary-active;
+  }
+}
 [data-class~="click"] {
   cursor: pointer;
   position: relative;

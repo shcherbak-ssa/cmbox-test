@@ -27,22 +27,24 @@ const nearBlocks = {
 /** data */
 let currentBlock = 'carousel';
 let lastPageYOffset = pageYOffset;
+let scrollIsActive = false;
 
 /** init */
-setScrollEvent();
+window.addEventListener('scroll', scrollHandler);
 
-function setScrollEvent() {
-  window.addEventListener('scroll', scrollHandler, {once: true});
-}
+/** functions */
 function scrollHandler() {
+  if (scrollIsActive) return;
   if (pageYOffset < lastPageYOffset) return scrollToTop();
   if (pageYOffset > lastPageYOffset) return scrollToBottom();
 }
 function scrollToTop() {
+  scrollIsActive = true;
   const {prev} = getNearBlocks();
   if (prev) scroll(prev);
 }
 function scrollToBottom() {
+  scrollIsActive = true;
   const {next} = getNearBlocks();
   if (next) scroll(next);
 }
@@ -56,9 +58,7 @@ function scroll(newBlock) {
   scrollIntoView(block, document.body, {behavior: 'smooth'})
     .then(() => {
       updateLastPageYOffset();
-      setScrollEvent();
-      console.log('currentBlock', currentBlock);
-      console.log('lastPageYOffset', lastPageYOffset);
+      scrollIsActive = false;
     })
 }
 function updateCurrentBlock(newBlock) {

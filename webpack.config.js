@@ -15,6 +15,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /** postcss plugins */
 const postcssShort = require('postcss-short');
+const cssnano = require('cssnano');
 
 /** webpack config */
 const webpackConfig = (env = {}) => {
@@ -62,7 +63,8 @@ const webpackConfig = (env = {}) => {
               loader: 'postcss-loader',
               options: {
                 plugins: [
-                  postcssShort({ prefix: 'x', skip: 'x' })
+                  postcssShort({ prefix: 'x', skip: 'x' }),
+                  cssnano(isDev ? false : {}),
                 ]
               }
             },
@@ -92,15 +94,9 @@ const webpackConfig = (env = {}) => {
         },
       ]
     },
-    resolve: {
-      alias: {
-        '@style-assets': joinPaths(SRC_DIRNAME, 'styles', 'assets.scss')
-      }
-    },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        //favicon: joinPaths(SRC_DIRNAME, 'assets', 'favicon.ico'),
         template: joinPaths(SRC_DIRNAME, 'index.pug'),
         scriptLoading: 'defer',
       }),
